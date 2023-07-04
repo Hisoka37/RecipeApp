@@ -55,7 +55,31 @@ class UsersController < ApplicationController
     end
   end
 
+  def shopping_list
+    @user = current_user
+    prepare_shopping_list
+    remove_user_food_from_shopping_list
+    calculate_total_value
+  end
+
   private
+
+  # def prepare_shopping_list
+  #   @shopping_list = {}
+  #   @user.recipes.each do |recipe|
+  #     recipe.recipe_food.each do |recipe_food|
+  #       food = recipe_food.food
+  #       if @shopping_list[food.id]
+  #         @shopping_list[food.id][:quantity] += recipe_food.quantity
+  #       else
+  #         @shopping_list[food.id] = {
+  #           food:,
+  #           quantity: recipe_id.quantity
+  #         }
+  #       end
+  #     end
+  #   end
+  # end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_user
