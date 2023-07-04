@@ -12,3 +12,8 @@
 
   <%= button_to "Destroy this recipe", @recipe, method: :delete %>
 </div>
+
+<div>
+<%= button_to "Generate shopping list", general_shopping_list_path, method: :get %>
+<%= button_to "Add ingredients", new_ingredient_path(@recipe), method: :get  %>
+</div>
