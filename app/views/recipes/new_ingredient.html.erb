@@ -1,0 +1,27 @@
+<h1 style="text-align: center; margin: 40px;">New Ingredient</h1>
+
+<%= form_with model: [@recipe, @food], url: create_ingredient_path do |form| %>
+<div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name, class: "food-form-field" %>
+  </div>
+
+  <div>
+    <%= form.label :measurement, style: "display: block" %>
+    <%= form.text_field :measurement, class: "food-form-field" %>
+  </div>
+
+  <div>
+    <%= form.label :price, style: "display: block" %>
+    <%= form.text_field :price, class: "food-form-field" %>
+  </div>
+  <div>
+  <%= form.fields_for :recipe_foods do |recipe_food| %>
+    <%= recipe_food.label :recipe_quantity %><br>
+    <%= recipe_food.number_field :quantity, class: "ingredient-form-field" %>
+  <% end %>  
+  </div>
+  <div>
+    <%= form.submit "Submit", class: "food-form-submit" %>
+  </div>
+<% end %>
