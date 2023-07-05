@@ -33,8 +33,8 @@
   table.paleBlueRows {
     font-family: "Times New Roman", Times, serif;
     border: 1px solid #FFFFFF;
-    width: 350px;
-    height: 200px;
+    width: 450px;
+    height: 90px;
     text-align: center;
     border-collapse: collapse;
   }
@@ -43,7 +43,7 @@
     padding: 3px 2px;
   }
   table.paleBlueRows tbody td {
-    font-size: 13px;
+    font-size: 20px;
   }
   table.paleBlueRows tr:nth-child(even) {
     background: #D0E4F5;
