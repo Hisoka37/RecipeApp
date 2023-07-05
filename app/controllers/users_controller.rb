@@ -58,7 +58,7 @@ class UsersController < ApplicationController
   def shopping_list
     @user = current_user
     prepare_shopping_list
-    remove_user_food_from_shopping_list
+    # remove_user_food_from_shopping_list
     calculate_total_value
   end
 
@@ -74,21 +74,21 @@ class UsersController < ApplicationController
         else
           @shopping_list[food.id] = {
             food:,
-            quantity: recipe_id.quantity
+            quantity: recipe_food.quantity
           }
         end
       end
     end
   end
   
-  def remove_user_food_from_shopping_list
-    @user.foods.each do |food|
-    next unless @shopping_list[food.id]
+  # def remove_user_food_from_shopping_list
+  #   @user.foods.each do |food|
+  #     next unless @shopping_list[food.id]
 
-    @shopping_list[food.id][:quantity] -= food.quantity
-    @shopping_list.delete[food.id] if @shopping_list[food.id][:quantity] <= 0
-    end
-  end
+  #     @shopping_list[food.id.to_i][:quantity] -= food.quantity
+  #     @shopping_list.delete(food.id) if @shopping_list[food.id][:quantity] <= 0
+  #   end
+  # end
 
   def calculate_total_value
     @total_value = 0
