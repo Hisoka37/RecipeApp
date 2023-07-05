@@ -67,7 +67,7 @@ class UsersController < ApplicationController
   def prepare_shopping_list
     @shopping_list = {}
     @user.recipes.each do |recipe|
-      recipe.recipe_food.each do |recipe_food|
+      recipe.recipe_foods.each do |recipe_food|
         food = recipe_food.food
         if @shopping_list[food.id]
           @shopping_list[food.id][:quantity] += recipe_food.quantity
@@ -92,7 +92,7 @@ class UsersController < ApplicationController
 
   def calculate_total_value
     @total_value = 0
-    @shopping_list.each.value do |item|
+    @shopping_list.each_value do |item|
       @total_value += item[:quantity] * item[:food].price
     end
   end

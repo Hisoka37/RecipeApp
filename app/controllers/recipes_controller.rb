@@ -7,7 +7,10 @@ class RecipesController < ApplicationController
   end
 
   # GET /recipes/1 or /recipes/1.json
-  def show; end
+  def show
+    @recipe = Recipe.includes(:recipe_foods).find(params[:id])
+    @ingredients = @recipe.recipe_foods.where(recipe: @recipe) 
+  end
 
   # GET /recipes/new
   def new
@@ -64,7 +67,7 @@ class RecipesController < ApplicationController
 
   def create_ingredient
     @current_user = current_user
-    @recipe = Recipe.find(paramas[:recipe_id])
+    @recipe = Recipe.find(params[:recipe_id])
     @food = @current_user.foods.build(food_params.except(:recipe_foods_attributes))
 
     puts @food.inspect
@@ -97,6 +100,6 @@ class RecipesController < ApplicationController
   end
 
   def food_params
-    params.require(:food).permit(:name, :measurement_unit, :price, :quantity, recipe_foods_attributes: [:quantity])
+    params.require(:food).permit(:name, :measurement, :price, :quantity, recipe_foods_attributes: [:quantity])
   end
 end
