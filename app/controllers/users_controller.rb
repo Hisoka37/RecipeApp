@@ -58,7 +58,6 @@ class UsersController < ApplicationController
   def shopping_list
     @user = current_user
     prepare_shopping_list
-    # remove_user_food_from_shopping_list
     calculate_total_value
   end
 

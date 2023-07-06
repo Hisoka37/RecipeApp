@@ -8,12 +8,14 @@ Total value of food needed: $<%= @total_value %>
 </p>
 </div>
 <div class="row">
-<table class="table">
+<table class="paleBlueRows">
+    <thead>
     <tr>
         <th>Food</th>
         <th>Quantity</th>
         <th>Price</th>
     </tr>
+    </thead>
     <% @shopping_list.each_value do |item| %>
         <tr>
           <td><%= item[:food].name %></td>
