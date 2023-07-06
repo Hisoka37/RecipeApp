@@ -74,3 +74,138 @@ nav .container {
 .dropdown-content li a:hover{
 	color: blue;
 }
+
+/* Food styling */
+
+.add-btn{
+	color:white;
+	background-color: rgb(41, 143, 41);
+	font-size:20px;
+	padding:6px;
+	float: right;
+}
+.add-btn:hover {
+	opacity: 0.9;
+}
+
+.add-btn:active {
+	background-color: rgb(22, 63, 22);
+}
+
+.food-container .delete-btn{
+	color: white;
+	background-color: red;
+	padding:5px;
+	font-weight: lighter;
+	border-radius:4px;
+}
+.food{
+	padding:20px;
+}
+.food-container{
+	display:flex;
+	width:100%;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+}
+.styled-table {
+	border-collapse: collapse;
+	margin: 25px 0;
+	font-size: 0.9em;
+	font-family: sans-serif;
+	min-width: 600px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+	background-color: #009879;
+	color: #ffffff;
+	text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+	padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+	border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+	background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+	border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+	font-weight: bold;
+	color: #009879;
+}
+
+/* Add food styling */
+.add__food-container{
+	width: 100%;
+	padding: 0 15rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 60vh;
+}
+
+.add__food-container h2{
+	color: blue;
+	font-size: 20px;
+	text-align: center;
+	font-weight: 400;
+}
+@media screen and (max-width:480px) {
+		.add__food-container {
+		width: 100%;
+		padding: 0 4rem;
+	}
+}
+.input{
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+input[type=submit] {
+	width: 100%;
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+	background-color: #45a049;
+}
+
+/* Public Recipes styling */
+.public-container{
+	display: flex;
+	flex-direction: column;
+	gap:20px;
+	justify-content: center;
+	align-items: center;
+}
+.public-container .inner-container{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 50%;
+	border: 1px solid gray;
+	padding: 10px;
+}
