@@ -5,47 +5,53 @@
       <%= @recipe.name %>
     </h2>
 </div>
+<div class ="borders">
 <div class="recipe_info">
-      <p>Preparation time: <%= @recipe.preparation_time %><p>
-      <p>Cooking time: <%= @recipe.cooking_time %></p>
+      <p>Preparation time: <%= @recipe.preparation_time %> minutes<p>
+      <p>Cooking time: <%= @recipe.cooking_time %> minutes</p>
       <p>Steps go here...: <%= @recipe.description %></p>
 </div>
 
-<div>
-  <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %> |
-  <%= link_to "Back to recipes", recipes_path %>
-
-  <%= button_to "Destroy this recipe", @recipe, method: :delete %>
+<div class = "recipe_contr">
+  <%= link_to "Edit this recipe", edit_recipe_path(@recipe), class: "btn-generate" %> 
+  <%= link_to "Destroy this recipe", @recipe, class: "btn-delete-recipe", method: :delete %>
 </div>
 
-<div>
-<%= button_to "Generate shopping list", general_shopping_list_path, method: :get %>
-<%= button_to "Add ingredients", new_ingredient_path(@recipe), method: :get  %>
+<div class="recipe_contr">
+<%= link_to "Generate shopping list", general_shopping_list_path, class: "btn-generate", method: :get %>
+<%= link_to "Add ingredients", new_ingredient_path(@recipe), class: "btn-add_new_recipe", method: :get  %>
 </div>
 
 <% if @ingredients.empty? %>
         <p class="no_item">No Ingredients Found! Please Add a new one.</p>
     
     <% else %>
-      <table class="recipe_table">
-        <tr>
-          <th>Food</th>
-          <th>Quantity</th>
-          <th>Value</th>
-          <th>Actions</th>
-        </tr>
-        <% @ingredients.each do |recipe_food| %> 
-          <tr>
-            <td><%= recipe_food.food.name %></td>
-            <td><%= recipe_food.quantity %></td>
-            <td><%= recipe_food.food.price %></td>
-            <td>
-              <div>
-               <button>Edit<button>
-               <button>Delete<button>
-              </div>
-            </td>
-          </tr>
-        <% end %>
-      </table>
+    <div class ="table_border">
+      <table class="paleBlueRows recipe_table">
+  <thead>
+    <tr>
+      <th>Food</th>
+      <th>Quantity</th>
+      <th>Value</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @ingredients.each do |recipe_food| %>
+      <tr>
+        <td><%= recipe_food.food.name %></td>
+        <td><%= recipe_food.quantity %></td>
+        <td><%= recipe_food.food.price  %> $</td>
+        <td>
+          <div>
+            <button>Edit</button>
+            <button>Delete</button>
+          </div>
+        </td>
+      </tr>
     <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+  <% end %>
