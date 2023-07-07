@@ -18,10 +18,10 @@ class Recipe < ApplicationRecord
 
   FactoryBot.define do
     factory :recipe do
-      name { "Test Recipe" }
+      name { 'Test Recipe' }
       preparation_time { 30 }
       cooking_time { 60 }
-      description { "Recipe description" }
+      description { 'Recipe description' }
     end
   end
 end

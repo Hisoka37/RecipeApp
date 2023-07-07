@@ -79,7 +79,7 @@ class UsersController < ApplicationController
       end
     end
   end
-  
+
   # def remove_user_food_from_shopping_list
   #   @user.foods.each do |food|
   #     next unless @shopping_list[food.id]
@@ -95,6 +95,7 @@ class UsersController < ApplicationController
       @total_value += item[:quantity] * item[:food].price
     end
   end
+
   # Use callbacks to share common setup or constraints between actions.
   def set_user
     @user = User.find(params[:id])
