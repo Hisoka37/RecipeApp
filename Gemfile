@@ -27,6 +27,10 @@ gem 'rails-controller-testing'
 
 gem 'cancancan'
 
+gem 'capybara-email'
+
+gem 'action_mailer_cache_delivery'
+
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem 'importmap-rails'
 

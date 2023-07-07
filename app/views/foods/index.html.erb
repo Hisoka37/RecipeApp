@@ -1,16 +1,15 @@
-<section class="containerz px-5 mt-5">
-  <div class="col-md-6 offset-md-10 py-1">
-    <%= link_to "Add Food", new_food_path, class: "edit-link btn btn-primary p-0" %>
+<section>
+  <div>
+    <%= link_to "Add Food", new_food_path, class: "edit-link" %>
   </div>
   <div>
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">Food</th>
-          <th scope="col">Measurement Unit</th>
-          <th scope="col">Price</th>
-          <th scope="col">Actions</th>
-        </tr>
+          <th>Food</th>
+          <th>Measurement Unit</th>
+          <th>Price</th>
+          <th>Actions</th>
       </thead>
       <tbody>
         <% @foods.each do |food| %>
