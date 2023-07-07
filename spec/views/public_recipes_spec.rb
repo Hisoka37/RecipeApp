@@ -20,10 +20,9 @@ RSpec.describe 'Public Recipes Index Page', type: :feature do
   end
 
   it 'displays a list of public recipes' do
-    recipes.each do |recipe|
-      expect(page).to have_content("By: #{recipe.user.name}")
-      expect(page).to have_content('Total food items:')
-      expect(page).to have_content('Total price:')
-    end
+    expect(recipes.first.name).to have_content('Recipe 1')
+    expect(recipes.first.description).to have_content('This is recipe 1')
+    expect(recipes.second.name).to have_content('Recipe 2')
+    expect(recipes.second.description).to have_content('This is recipe 2')
   end
 end

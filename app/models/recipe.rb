@@ -15,13 +15,4 @@ class Recipe < ApplicationRecord
   def total_price
     recipe_foods.includes(:food).sum { |recipe_food| recipe_food.food.price * recipe_food.quantity }
   end
-
-  FactoryBot.define do
-    factory :recipe do
-      name { "Test Recipe" }
-      preparation_time { 30 }
-      cooking_time { 60 }
-      description { "Recipe description" }
-    end
-  end
 end

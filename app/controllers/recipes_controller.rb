@@ -9,7 +9,7 @@ class RecipesController < ApplicationController
   # GET /recipes/1 or /recipes/1.json
   def show
     @recipe = Recipe.includes(:recipe_foods).find(params[:id])
-    @ingredients = @recipe.recipe_foods.where(recipe: @recipe) 
+    @ingredients = @recipe.recipe_foods.where(recipe: @recipe)
   end
 
   # GET /recipes/new
@@ -58,9 +58,9 @@ class RecipesController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   def new_ingredient
-    @recipe =  Recipe.find(params[:recipe_id])
+    @recipe = Recipe.find(params[:recipe_id])
     @food = Food.new
     @recipe_food = @food.recipe_foods.build
   end
@@ -73,20 +73,21 @@ class RecipesController < ApplicationController
     puts @food.inspect
     if @food.save
       @recipe_food = @food.recipe_foods.build(recipe: @recipe, quantity: food_params[:recipe_foods_attributes]['0'][:quantity])
-      
-    if @recipe_food.save
+
+      if @recipe_food.save
         redirect_to recipe_path(@recipe), notice: 'Your Recipe is created successfully'
-    else
+      else
         flash[:alert] = 'Something went wrong, try again!!'
         puts @recipe_food.errors.full_messages
         render :new_ingredient
-    end
+      end
     else
       flash[:alert] = 'Something went wrong, try again!!'
       puts @food.errors.full_messages
       render :new_ingredient
     end
   end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
