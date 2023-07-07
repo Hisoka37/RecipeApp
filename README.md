@@ -81,7 +81,7 @@ Clone this repository to your desired folder:
 ```
  - mkdir my-folder
  - cd my-folder
- - https://github.com/Ridwanullahi-code/RecipeApp.git
+ - https://github.com/Hisoka37/RecipeApp.git
  - cd Recipe-app
  - bundle install
  - rails db:create
@@ -139,7 +139,7 @@ To run the project, execute the following command:
 
 ## :handshake: Contributing <a name="contributing"></a>
 Contributions, issues, and feature requests are welcome!
-Feel free to check the [issues page](https://github.com/Ridwanullahi-code/RecipeApp/issues).
+Feel free to check the [issues page](https://github.com/Hisoka37/RecipeApp/issues).
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- SUPPORT -->
