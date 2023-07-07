@@ -81,7 +81,7 @@ Clone this repository to your desired folder:
 ```
  - mkdir my-folder
  - cd my-folder
- - https://github.com/Ridwanullahi-code/Recipe-App.git
+ - https://github.com/Ridwanullahi-code/RecipeApp.git
  - cd Recipe-app
  - bundle install
  - rails db:create
@@ -110,10 +110,11 @@ To run the project, execute the following command:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Aman Worku**
-- GitHub: [@Aman_on_GitHub](https://github.com/AmanWorku)
-- Twitter: [@Aman_on_Twitter](https://twitter.com/Amexworku)
-- LinkedIn: [@Aman_on_LinkedIn](https://www.linkedin.com/in/aman-worku-tsegaw/)
+👤 **Walid Kabboussa**
+
+- GitHub: [@Hisoka37](https://github.com/Hisoka37)
+- Twitter: [@KBwalid9](https://twitter.com/KBwalid9)
+- LinkedIn: [Walid Kabboussa](https://www.linkedin.com/in/walidkb/)
 
 
 👤 **Ajayi Ridwan**
@@ -138,7 +139,7 @@ To run the project, execute the following command:
 
 ## :handshake: Contributing <a name="contributing"></a>
 Contributions, issues, and feature requests are welcome!
-Feel free to check the [issues page](https://github.com/Ridwanullahi-code/Recipe-App/issues).
+Feel free to check the [issues page](https://github.com/Ridwanullahi-code/RecipeApp/issues).
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- SUPPORT -->
