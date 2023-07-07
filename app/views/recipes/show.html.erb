@@ -6,15 +6,21 @@
     </h2>
 </div>
 <div class ="borders">
+<div class ="container">
 <div class="recipe_info">
       <p>Preparation time: <%= @recipe.preparation_time %> minutes<p>
       <p>Cooking time: <%= @recipe.cooking_time %> minutes</p>
       <p>Steps go here...: <%= @recipe.description %></p>
 </div>
-
-<div class = "recipe_contr">
-  <%= link_to "Edit this recipe", edit_recipe_path(@recipe), class: "btn-generate" %> 
-  <%= link_to "Destroy this recipe", @recipe, class: "btn-delete-recipe", method: :delete %>
+<div class="check">
+  <%= button_to edit_recipe_path(@recipe), method: :get, class: 'btn-toggle-public', style: (@recipe.public? ? 'background-color: green;' : 'background-color: red;') do %>
+    <% if @recipe.public? %>
+     Public
+    <% else %>
+     Private
+    <% end %>
+  <% end %>
+</div>
 </div>
 
 <div class="recipe_contr">
