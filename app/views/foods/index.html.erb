@@ -1,15 +1,15 @@
-<section class="containerz px-5 mt-5">
-  <div class="col-md-6 offset-md-10 py-1">
-    <%= link_to "Add Food", new_food_path, class: "edit-link btn btn-primary p-0" %>
-  </div>
+<section class="food">
   <div>
-    <table class="table">
+    <%= link_to "Add Food", new_food_path, class: "add-btn" %>
+  </div>
+  <div class="food-container">
+    <table class="styled-table">
       <thead>
         <tr>
-          <th scope="col">Food</th>
-          <th scope="col">Measurement Unit</th>
-          <th scope="col">Price</th>
-          <th scope="col">Actions</th>
+          <th>Food</th>
+          <th>Measurement Unit</th>
+          <th>Price</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -19,7 +19,7 @@
           <td><%= food.measurement %></td>
           <td><%= number_to_currency(food.price) %></td>
           <td>
-            <%= button_to "Delete", food_path(food), class: "border border-light rounded-pill", method: :delete, data: { confirm: "Are you sure about delete #{food.name}?" } %>
+            <%= button_to "Delete", food_path(food), class: "delete-btn", method: :delete, data: { confirm: "Are you sure about delete #{food.name}?" } %>
           </td>
         </tr>
         <% end %>
